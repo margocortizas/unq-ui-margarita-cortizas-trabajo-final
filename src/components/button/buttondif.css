@@ -1,0 +1,22 @@
+.buttondif {
+    border-radius: 8px;
+    color:black;
+    border: 1px solid transparent;
+    size:20px;
+    width: 500px;
+    margin: 25px;
+    font-size: 3em;
+    font-weight: 600;
+    background-color:whitesmoke;
+    display: inline-block;
+    cursor: pointer; 
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 5px 3px 0 rgba(0, 0, 0, 0.19);
+    transition: border-color 0.25s;
+  }
+
+  .buttondif:hover {
+    border-color: #e3ff64;
+    background-color: #e3ff64;
+    color: grey;
+  }
+

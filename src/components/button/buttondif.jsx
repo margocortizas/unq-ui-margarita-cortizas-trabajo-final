@@ -8,7 +8,7 @@ import Api from '../../service/Api'
 const ButtonDifficulties =({difficultName}) => {
     const navigate = useNavigate()
     return(
-        <button onClick={() => navigate(`/question/${difficultName}`)}>{difficultName}</button>
+        <button className ="buttondif" onClick={() => navigate(`/question/${difficultName}`)}>{difficultName}</button>
     )
 }
 export default ButtonDifficulties;

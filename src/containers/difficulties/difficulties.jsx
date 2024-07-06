@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import './difficulties.css'
+import '../home/home.css'
 import { useNavigate } from 'react-router-dom'
 import Api from '../../service/Api'
 import ButtonDifficulties from '../../components/button/buttondif'
@@ -25,11 +26,15 @@ const Difficulties =() => {
 
     return(
         <>
-        {
         <div>
-            {difficulties.map((difficulty) => (<ButtonDifficulties difficultName = {difficulty} />))}
-        </div> 
-        }
+        <div className="home dif">
+            {<div className="content difficulties">
+                {difficulties.map((difficulty) => (<ButtonDifficulties difficultName = {difficulty} />))}
+            </div>}
+        </div>
+
+        </div>
+        
         </>
     )
 }

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './home.css'
+import '../../components/button/buttondif.css'
 import { useNavigate } from 'react-router-dom'
-import image from '../../assets/logo.jpg'
 
 const Home =() => {
     const navigate = useNavigate()
@@ -9,10 +9,8 @@ const Home =() => {
     return(
         <>
            <div className="home">
-                <div>
-                    <div>
+                <div className = "content">
                         <button  onClick = {() => navigate("/difficulties")}> Play! </button>
-                    </div>  
                 </div>
             </div>
         </>
