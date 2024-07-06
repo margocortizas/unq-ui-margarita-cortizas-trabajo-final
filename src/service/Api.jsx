@@ -8,7 +8,7 @@ export const getDifficulties = async () => {
   return response;
 };
 
-export const getQuestions = async (difficulty = 'easy') => {
+export const getQuestions = async (difficulty) => {
   const response = await axios.get(`${API_URL}/questions?difficulty=${difficulty}`);
   return response;
 };
