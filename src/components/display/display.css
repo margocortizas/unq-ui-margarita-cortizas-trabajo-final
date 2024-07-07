@@ -18,6 +18,7 @@
     padding: 1%;
 }
 
+
 .question{
     background-color: white;
     color: violet;
@@ -53,16 +54,13 @@
     cursor: pointer; 
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 5px 3px 0 rgba(0, 0, 0, 0.19);
 }
-.rtas.correct {
+.correct, .correct:hover {
     background-color: green;
     color: white;
     font-style: italic;
-    transition: background-color 0.25s;
 }
   
-.rtas.incorrect {
+.incorrect, .incorrect:hover {
     background-color: red;
     color: white;
-    font-style: italic;
-    transition: background-color 0.25s;
 }

@@ -18,23 +18,24 @@ const Questions = () => {
             {setQuestions(response.data)
              setCurrentQuestion(response.data[0])})
         .catch(
-            console.log("falla en carga de preguntas")
+            console.log("Error loading questions")
         ).finally(console.log(questions))
-    }
+    };
     
 
     useEffect (() => {
         allAnswers()
-    }
-    ,[])
+    },[]);
 
     const handleAnswer = async (option) => {
         await Api.checkAnswer(current.id, option)
         .then((response)=>
-                {if (response.data.answer) setCorrectAnswer(correct + 1);
-                setNewIndex(index+1);
-                setCurrentQuestion(questions[index]);   
-        })
+                {if (response.data.answer) setCorrectAnswer(correct + 1)
+                    setNewIndex(index+1);
+                    setCurrentQuestion(questions[index])})
+        .catch(
+            console.log("Error checking answer")
+        )
     };
 
 
@@ -45,17 +46,17 @@ const Questions = () => {
               
                 <QuestionDisplay difficultName ={params} question={current} handleAnswer={handleAnswer} counter = {correct}/>
               
-                : <>
+                :( <>
                     <div className="home">
                         <div className="content">
                             <div className="score">
-                            <h1>Your score is: {correct} !</h1>
+                                <h1>Your score is: {correct} !</h1>
                             </div>
                             <button onClick = {() => navigate("/difficulties")}> Try Again</button>
                         </div>
                     </div>
                  </>
-              }
+                )}
             
         </div>
       );
