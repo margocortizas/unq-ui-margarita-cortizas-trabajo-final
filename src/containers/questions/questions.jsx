@@ -40,17 +40,23 @@ const Questions = () => {
 
     return (
         <div>
-            <>
-              {current ? 
+            
+              {current && setTimeout(1000) ? 
               
-                <QuestionDisplay difficultName ={params} question={current} handleAnswer={handleAnswer} counter = {correct} />
+                <QuestionDisplay difficultName ={params} question={current} handleAnswer={handleAnswer} counter = {correct}/>
               
-                : <div>
-                    <p>Your result is : {correct}</p>
-                    <button onClick = {() => navigate("/difficulties")}> volver</button>
-                 </div> 
+                : <>
+                    <div className="home">
+                        <div className="content">
+                            <div className="score">
+                            <h1>Your score is: {correct} !</h1>
+                            </div>
+                            <button onClick = {() => navigate("/difficulties")}> Try Again</button>
+                        </div>
+                    </div>
+                 </>
               }
-            </>
+            
         </div>
       );
     }

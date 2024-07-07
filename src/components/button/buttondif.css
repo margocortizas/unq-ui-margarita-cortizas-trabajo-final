@@ -15,8 +15,8 @@
   }
 
   .buttondif:hover {
-    border-color: #e3ff64;
-    background-color: #e3ff64;
-    color: grey;
+    border-color: violet;
+    background-color:violet;
+    color: black;
   }
 
