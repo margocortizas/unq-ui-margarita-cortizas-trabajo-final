@@ -6,10 +6,10 @@ El juego permite seleccionar la dificultad, responder preguntas y obtener result
 
 ## Instalación
 1. Clonar el repositorio en una carpeta de la pc usando git bash, para luego en la consola escribir: 
-git clone https://github.com/<usuario>/unq-ui-margarita-cortizas-trabajo-final.git 
-(reemplazando <usuario> por la cuenta que lo quiera clonar)
+git clone https://github.com/usuario/unq-ui-margarita-cortizas-trabajo-final.git 
+(reemplazando "usuario" por la cuenta que lo quiera clonar)
 2. Navegar al directorio del proyecto:
-cd unq-ui-<nombre-apellido>-trabajo-final
+cd unq-ui-margarita-cortizas-trabajo-final
 3. Instalar las dependencias:
 (Asegurándose que tengas Node.js instalado)
 npm install
