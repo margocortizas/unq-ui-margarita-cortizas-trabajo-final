@@ -1,0 +1,66 @@
+.juego{
+    display: grid;
+    grid-auto-rows: max-content;
+    gap: 5px;
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px;
+    
+}
+.text{
+    display: flex;
+    align-content: flex-start;    
+    align-items: flex-start;
+    justify-content: center;
+    justify-content: space-around;
+    background-color: violet;
+    color: white;
+    padding: 1%;
+}
+
+.question{
+    background-color: white;
+    color: violet;
+    margin-top: 10px;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.rtas{
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 300px;
+    max-width: 500px;
+    min-width: 80px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 5px solid transparent;
+    font-size: 1.8em;
+    font-weight:200;
+    background-color: white;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    cursor: pointer; 
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 5px 3px 0 rgba(0, 0, 0, 0.19);
+}
+.rtas.correct {
+    background-color: green;
+    color: white;
+    font-style: italic;
+    transition: background-color 0.25s;
+}
+  
+.rtas.incorrect {
+    background-color: red;
+    color: white;
+    font-style: italic;
+    transition: background-color 0.25s;
+}

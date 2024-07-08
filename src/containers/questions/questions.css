@@ -1,0 +1,9 @@
+.score {
+    display: flex;
+    background-color: white;
+    color: violet;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+}
