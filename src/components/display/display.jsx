@@ -6,32 +6,21 @@ import Api from '../../service/Api'
 const DisplayQuestion =({difficultName, question, handleAnswer, counter}) => {
     const navigate = useNavigate()
     const [selectedButton, setSelectedButton] = useState(null);
-    const [isCorrect, setIsCorrect] = useState(null);
+    const [isCorrect, setIsCorrect] = useState();
 
     const handleButtonClick  = async (option) => {
         setSelectedButton(option);
         const response = await Api.checkAnswer(question.id, option);
-        if (response.data.answer) {
-            setIsCorrect(true);
-        } else {
-            setIsCorrect(false);
-        }
-        handleAnswer(option);
+        setIsCorrect(response.data.answer);
+        setTimeout(() => {
+            handleAnswer(option);
+            setSelectedButton(null);
+            setIsCorrect(null);
+        }, 400);
     };
 
-    useEffect(() => {
-        if (selectedButton !== null) {
-            const timer = setTimeout(() => {
-                setSelectedButton(null);
-                setIsCorrect(null);
-            }, 400);
-
-            return () => clearTimeout(timer);
-        }
-    }, [selectedButton]);
-
     const getButtonClass = (option) => {
-        if (selectedButton == option) {
+        if (selectedButton === option) {
             return isCorrect ? "rtas correct" : "rtas incorrect";
         }
         return "rtas";

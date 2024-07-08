@@ -13,13 +13,13 @@ const Questions = () => {
     const [index, setNewIndex] = useState(0)
 
     const allAnswers = async () => {
-        await Api.getQuestions(params)
-        .then((response) =>
-            {setQuestions(response.data)
-             setCurrentQuestion(response.data[0])})
-        .catch(
-            console.log("Error loading questions")
-        ).finally(console.log(questions))
+        try {
+            const response = await Api.getQuestions(params);
+            setQuestions(response.data);
+            setCurrentQuestion(response.data[0]);
+        } catch (error) {
+            console.log("Error loading questions");
+        }
     };
     
 
@@ -28,14 +28,21 @@ const Questions = () => {
     },[]);
 
     const handleAnswer = async (option) => {
-        await Api.checkAnswer(current.id, option)
-        .then((response)=>
-                {if (response.data.answer) setCorrectAnswer(correct + 1)
-                    setNewIndex(index+1);
-                    setCurrentQuestion(questions[index])})
-        .catch(
-            console.log("Error checking answer")
-        )
+        try {
+            const response = await Api.checkAnswer(current.id, option);
+            if (response.data.answer) {
+                setCorrectAnswer(correct + 1);
+            }
+            const newIndex = index + 1;
+            if (newIndex < questions.length) {
+                setNewIndex(newIndex);
+                setCurrentQuestion(questions[newIndex]);
+            } else {
+                setCurrentQuestion(null);
+            }
+        } catch (error) {
+            console.log("Error checking answer");
+        }
     };
 
 
