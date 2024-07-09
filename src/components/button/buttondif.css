@@ -5,6 +5,7 @@
     size:20px;
     width: 500px;
     margin: 25px;
+    text-transform: capitalize;
     font-size: 3em;
     font-weight: 600;
     background-color:whitesmoke;

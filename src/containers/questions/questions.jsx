@@ -49,7 +49,7 @@ const Questions = () => {
     return (
         <div>
             
-              {current && setTimeout(1000) ? 
+              {current ? 
               
                 <QuestionDisplay difficultName ={params} question={current} handleAnswer={handleAnswer} counter = {correct}/>
               
