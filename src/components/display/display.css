@@ -57,7 +57,6 @@
 .correct, .correct:hover {
     background-color: green;
     color: white;
-    font-style: italic;
 }
   
 .incorrect, .incorrect:hover {
