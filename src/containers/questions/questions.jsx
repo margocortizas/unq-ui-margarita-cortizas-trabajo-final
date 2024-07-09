@@ -13,13 +13,13 @@ const Questions = () => {
     const [index, setNewIndex] = useState(0)
 
     const allAnswers = async () => {
-        await Api.getQuestions(params)
-        .then((response) =>
-            {setQuestions(response.data)
-             setCurrentQuestion(response.data[0])})
-        .catch(
-            console.log("Error loading questions")
-        ).finally(console.log(questions))
+        try {
+            const response = await Api.getQuestions(params);
+            setQuestions(response.data);
+            setCurrentQuestion(response.data[0]);
+        } catch (error) {
+            console.log("Error loading questions");
+        }
     };
     
 
